@@ -7,21 +7,9 @@ class GoogleSearchCommand(sublime_plugin.TextCommand):
 
         selection = ""
         for region in self.view.sel():
-            # Concatenate selected regions together.
-            selection += self.view.substr(region)
+            word = self.view.word(region)
+            if not word.empty():
+                selection += " " + self.view.substr(word)
 
         webbrowser.open("http://www.google.com/search?q=%s" % selection)
 
-    def is_visible(self):
-
-        is_visible = False
-
-        # Only enable menu option if at least one region contains selected text.
-        for region in self.view.sel():
-            if not region.empty():
-                is_visible = True
-
-        return is_visible
-
-    def is_enabled(self):
-        return self.is_visible()

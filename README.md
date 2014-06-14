@@ -1,9 +1,9 @@
 google-search
 =============
 
-Search Google for the currently selected text in Sublime Text 2.
+Search Google for the currently selected text in Sublime Text 2/3.
 
-This package adds a "Search Google" command to the context menu in [Sublime Text 2][1].
+This package adds a "Search Google" command to the context menu in [Sublime Text][1].
 
 ##Install
 
@@ -16,12 +16,12 @@ Or you can download the package as a zip file [https://github.com/nwjlyons/googl
 
 ##Usage
 
-To use the command select some text and right click in the buffer area.
+Place the cursor inside a word or select some text and press `Ctrl+Shift+G`.
 
 ![enter image description here][4]
 
 
-  [1]: http://www.sublimetext.com/2
+  [1]: http://www.sublimetext.com
   [2]: https://sublime.wbond.net/
   [3]: https://github.com/nwjlyons/google-search/archive/master.zip
   [4]: http://i.stack.imgur.com/MJMC1.png
