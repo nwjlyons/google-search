@@ -1,0 +1,4 @@
+[
+  { "caption": "Google Search: Search selected text/word", "command": "google_search" },
+  { "caption": "Google Search: Search any", "command": "google_search_any" }
+]

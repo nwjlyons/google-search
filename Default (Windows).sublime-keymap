@@ -1,5 +1,8 @@
 [
     {
         "keys": ["ctrl+shift+g"], "command": "google_search"
+    },
+    {
+        "keys": ["ctrl+alt+g"], "command": "google_search_any"
     }
 ]
