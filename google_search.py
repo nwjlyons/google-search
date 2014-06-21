@@ -1,8 +1,20 @@
 import webbrowser
 import sublime, sublime_plugin
 
-class GoogleSearchCommand(sublime_plugin.TextCommand):
+def search(q):
+    settings = sublime.load_settings("google_search.sublime-settings")
+    # Attach the suffix and the prefix
+    q = settings.get('prefix', '') + q + settings.get('suffix', '')
 
+    fullUrl = settings.get('domain', 'https://www.google.com') + "/search?q=%s" % q
+
+    webbrowser.open(fullUrl)
+
+
+class GoogleSearchCommand(sublime_plugin.TextCommand):
+    """
+    Search the selected text or the current word
+    """
     def run(self, edit):
 
         querys = []
@@ -20,7 +32,7 @@ class GoogleSearchCommand(sublime_plugin.TextCommand):
 
         if len(querys) != 0:
             selection = " ".join(querys)
-            webbrowser.open("http://www.google.com/search?q=%s" % selection)
+            search(selection)
         else:
             sublime.status_message(" Nothing to search !")
             print("Google Search Plugin: Nothing to search !")
@@ -44,7 +56,7 @@ class GoogleSearchAnyCommand(sublime_plugin.WindowCommand):
         sublime.set_timeout(show_input_panel, 10)
 
     def on_done(self, text):
-         webbrowser.open("http://www.google.com/search?q=%s" % text)
+        search(text)
 
     def on_change(self):
         pass
