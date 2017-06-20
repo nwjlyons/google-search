@@ -1,15 +1,20 @@
 import webbrowser
 import sublime, sublime_plugin
+import sys
+
+if sys.version_info < (3, 0):
+    from urllib import quote as quote_param
+else:
+    from urllib.parse import quote_plus as quote_param
 
 def search(q):
     settings = sublime.load_settings("google_search.sublime-settings")
     # Attach the suffix and the prefix
     q = settings.get('prefix', '') + q + settings.get('suffix', '')
 
-    fullUrl = settings.get('domain', 'https://www.google.com') + "/search?q=%s" % q
+    fullUrl = settings.get('domain', 'https://www.google.com') + "/search?q=%s" % quote_param(q)
 
     webbrowser.open(fullUrl)
-
 
 class GoogleSearchCommand(sublime_plugin.TextCommand):
     """
