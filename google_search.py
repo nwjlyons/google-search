@@ -10,9 +10,9 @@ else:
 def search(q):
     settings = sublime.load_settings("google_search.sublime-settings")
     # Attach the suffix and the prefix
-    q = settings.get('prefix', '') + q + settings.get('suffix', '')
+    q = settings.get('prefix', '') + quote_param(q) + settings.get('suffix', '')
 
-    fullUrl = settings.get('domain', 'https://www.google.com') + "/search?q=%s" % quote_param(q)
+    fullUrl = settings.get('domain', 'https://www.google.com') + "/search?q=%s" % q
 
     webbrowser.open(fullUrl)
 
