@@ -13,8 +13,12 @@ def search(q):
     q = settings.get('prefix', '') + quote_param(q) + settings.get('suffix', '')
 
     fullUrl = settings.get('domain', 'https://www.google.com') + "/search?q=%s" % q
+    browser = settings.get('default_browser', '')
 
-    webbrowser.open(fullUrl)
+    try:
+        webbrowser.get(browser).open(fullUrl)
+    except:
+        webbrowser.open(fullUrl)
 
 class GoogleSearchCommand(sublime_plugin.TextCommand):
     """
