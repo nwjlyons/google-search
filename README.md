@@ -20,7 +20,7 @@ Or you can download the package as a zip file [https://github.com/nwjlyons/googl
 
 
 ## Settings
-```json
+```js
 {
     "suffix": "", // will be after the query
     "prefix": "", // will be added before the query
