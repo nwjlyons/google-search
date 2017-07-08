@@ -9,7 +9,7 @@ This package adds:
 * A pallete command for the current selection(or word)
 * A pallete command that will ask you what to search
 
-##Install
+## Install
 
 If your using the [Sublime Package Manger][2] hold down Ctrl+Shift+P and type
 `Package Control: Install Package`. Then search for `google-search` and hit return.
@@ -30,7 +30,7 @@ Or you can download the package as a zip file [https://github.com/nwjlyons/googl
 ```
 You can edit the settings by going to Preferences -> Package Settings -> Google Search -> Settings - User
 
-##Usage
+## Usage
 
 Place the cursor inside a word or select some text and press `Ctrl+Shift+G`.
 
