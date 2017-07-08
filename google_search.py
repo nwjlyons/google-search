@@ -15,9 +15,12 @@ def search(q):
     fullUrl = settings.get('domain', 'https://www.google.com') + "/search?q=%s" % q
     browser = settings.get('default_browser', '')
 
-    try:
-        webbrowser.get(browser).open(fullUrl)
-    except:
+    if browser:
+        try:
+            webbrowser.get(browser).open(fullUrl)
+        except:
+            webbrowser.open(fullUrl)
+    else:
         webbrowser.open(fullUrl)
 
 class GoogleSearchCommand(sublime_plugin.TextCommand):

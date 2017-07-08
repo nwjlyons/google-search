@@ -24,6 +24,7 @@ Or you can download the package as a zip file [https://github.com/nwjlyons/googl
 {
     "suffix": "", // will be after the query
     "prefix": "", // will be added before the query
+    "default_browser": "", // chrome, firefox, more valid values here https://docs.python.org/2/library/webbrowser.html#webbrowser.register
     "domain": "https://www.google.com" // google domain to perform the search
 }
 ```
