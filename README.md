@@ -11,7 +11,7 @@ This package adds:
 
 ## Install
 
-If your using the [Sublime Package Manger][2] hold down Ctrl+Shift+P and type
+If your using the [Sublime Package Manager][2] hold down Ctrl+Shift+P and type
 `Package Control: Install Package`. Then search for `google-search` and hit return.
 
 If your not using the package manager then go to your Sublime packages directory(Sublime Text/Packages) Then run this command `git clone https://github.com/nwjlyons/google-search.git`.
